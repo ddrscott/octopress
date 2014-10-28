@@ -1,34 +1,34 @@
 #!/usr/bin/env ruby
 require 'pry'
+require 'open-uri'
 
-rows = DATA.readlines.collect{|line| line.split.collect(&:to_i)}
+rows = (ARGV[0] ? open(ARGV[0]) : DATA).readlines.collect{|line| line.split.collect(&:to_i)}
 
-a,b,c = rows.shift,nil,nil
+a,b,sums = rows.shift,nil,nil
 work = [[a, [a[0]]]] # [original,maximums]
 while b = rows.shift
   # max of left or right sum
-  c = b.each_with_index.map{|v,i| [left=(i-1 < 0 ? v : a[i-1]+v),right=(a[i].to_i+v)].max}
-  work << [b, c]   # save work for later
-  a = c            # reset previous row with winners
+  sums = b.each_with_index.map{|v,i| [left=(i-1 < 0 ? v : a[i-1]+v),right=(a[i].to_i+v)].max}
+  work << [b, sums]   # save work for later
+  a = sums            # reset previous row with winners
 end
-puts "Maximum Total: #{c.max}"
+puts "Maximum Total: #{sums.max}"
 
-w = nil # winning indexk
-work.reverse.each_with_index.map do |orig_max,i|
-  original, max=*orig_max
-  w = if w
+winner = nil # winning index
+reverse = work.reverse.each_with_index.map do |orig_max,i|
+  orig, max=*orig_max
+  winner = if winner
     # find winner between the 2 nodes 
-    left=(w < 0 ? 0 : max[w-1]) 
-    right=max[w].to_i
-    (left > right) ? w-1 : w
+    left  = (winner < 0 ? 0 : max[winner-1]) 
+    right = max[winner].to_i
+    (left > right) ? winner-1 : winner
   else
     # find winner at end of tree
     max.index(max.max)
   end
-  padding = '  ' * (work.size + i)
-  line = original.collect{|o| (o == original[w] ? "\e[31m%02d\e[0m" : '%02d') % o}.join('  ')
-  puts "#{padding}#{line}"
+  "#{'  ' * i}#{orig.each_with_index.collect{|o,oi|(oi==winner ? "\e[31m%02d\e[0m" : '%02d') % o}.join('  ')}"
 end
+puts reverse.reverse
 
 __END__
 75
