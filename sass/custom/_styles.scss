@@ -2,7 +2,18 @@
 // Add styles here to make changes without digging in too much
 img.featured {
   margin-right: 2em;
+  margin-bottom: 1em;
   float: left;
   max-width: 100%;
   height: auto;
+}
+
+.full-single-article img.featured {
+  margin: inherit;
+  float: none;
+}
+
+ul, ol {
+  list-style: disc;
+  padding-left: 3em;
 }
