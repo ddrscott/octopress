@@ -51,31 +51,31 @@ end
 class Title
   has_many :nodes
   has_many :prices
-  
+
   searchable do
     text :name
     text :contributors
     text :snippet
-    
+
  	  integer :nodes, multiple: true do solr_nodes; end
  	  string :countries, multiple: true do solr_countries; end
  	  string :currencies, multiple: true do solr_currencies; end
   	Price.select(:country, :currency).uniq.each do |price|
   		double "#{price.country}_#{price.currency}" do solr_country_currency(price); end
   	end
-  	
+
     # ... many other fields
-    
+
   end
-  
+
   def solr_countries
   	prices.pluck(:country)
   end
-  
+
   def solr_currencies
   	prices.pluck(:currency)
   end
-  
+
   def solr_country_currency(price)
   	prices.where(country: price.country, currency: price.currency).first.try(:price)
   end
