@@ -1,3 +1,10 @@
+# Fresh Deploy
+```
+git clone git@github.com:ddrscott/ddrscott.github.io.git _deploy
+rake gen_deploy
+```
+
+# Original Octopress Readme
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
