@@ -45,10 +45,10 @@ class RainbowTty
         word.clear
       elsif c == "\e"
         # consume arrow keys
-        print c, STDIN.getch, STDIN.getch 
+        print c, STDIN.getch, STDIN.getch
       else
         # build up the word
-        word << c 
+        word << c
         print c
       end
     end
