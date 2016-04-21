@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yank Without Jank"
-date: 2016-04-15 21:51:11 -0500
+date: 2016-04-20 21:51:11 -0500
 comments: true
 categories: vim
 published: true
@@ -15,7 +15,7 @@ after a visual yank. Go ahead, try it: `vipy`. Where's your cursor? Where did
 you expect it to be located? When you're in a boring editor and do
 `shift-down-down-down <Cmd-c>`, where's your cursor?  Where did you expect it
 to be located? This janky behaviour always throws me off for a moment, then I
-compose myself, do a `<backtick><greaterthan>` to jump to the end of my selection and `p`.
+compose myself, do a `<backtick><greaterthan>` to jump to the end of my selection, and `p`.
 
 There must be a better way!
 <!-- more -->
