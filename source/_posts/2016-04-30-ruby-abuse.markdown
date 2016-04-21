@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Abuse: How Not to Write Ruby, But Still Have Fun"
-date: 2016-04-14 05:51:11 -0500
+date: 2016-04-30 05:51:11 -0500
 comments: true
 categories: ruby
 published: false
