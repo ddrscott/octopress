@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yank Without Jank"
-date: 2016-04-20 21:51:11 -0500
+date: 2016-04-25 04:51:11 -0500
 comments: true
 categories: vim
 published: true
