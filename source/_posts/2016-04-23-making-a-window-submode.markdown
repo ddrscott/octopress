@@ -1,29 +1,31 @@
 ---
 layout: post
-title: "Making a Window Submode"
-date: 2016-04-23 09:00:00 -0500
+title: "Making a Window Submode in Vim"
+date: 2016-04-25 09:00:00 -0500
 comments: true
-categories: vim
-published: false
+categories: vim, submodes
 ---
+{% img featured /images/window-mode-feature.png 1280 380 'Header Image' %}
 
-{% img featured /images/template.png  600 375 'Some Image' %}
-
-I found a plugin that is changing my Vim life. This plugin
-is so awesome it really should just be built in. What does the plugin do? It
-enable the creation of new submodes. Why would a person want *more* modes?!?
-Isn't dealing with modes the main complaint of new Vim users? Let's try out
-a submode new submode and see if we can change you _Vim-tire_ life!
-
+I found a plugin that is changing my Vim-tire life! This
+[plugin](https://github.com/kana/submodes.vim) is so awesome it should be
+built into default Vim. What does the [plugin](https://github.com/kana/submodes.vim)
+do? It enables the creation of new submodes. Why would a person want *more* modes?!?
+Isn't dealing with modes the main deterrent for new Vim users? Isn't Normal,
+Insert, Command-line, Visual, Select, and Operator-pending enough? (Did I miss one?)
+Let's try out a new submode and see what happens.
 <!-- more -->
 
 ## Problem
-Window commands are prefixed with `<C-w>`. What to create a horizontal split?
+Window commands are prefixed with `<C-w>`. Want to create a horizontal split?
 Try `<C-w>s`, didn't mean to do that and want to do vertical split? `<C-w>q<C-w>v`.
-Want to resize the vertical split `50<C-w>>`? Too big? `5<C-w><`. Move back to
-the other window? `<C-w>p` or `<C-w>w`.
+Want to resize the vertical split `50<C-w>>`? Too wide? Narrow it with `5<C-w><`.
+Move back to the other window? `<C-w>p` or `<C-w>w`.
 
-Here's a short list of common commands:
+Are your fingers getting tired? After I get the windows just right using default
+mappings my fingers are crying for mercy.
+
+Here's a short list of common default window commands:
 ```vim
 " Change window focus
 {n}<C-w>h   move cursor left  {n} window
@@ -42,36 +44,133 @@ Here's a short list of common commands:
 {n}<C-w>-  decrease height by {n} rows
 {n}<C-w><  decrease width by {n} columns
 {n}<C-w>>  increase width by {n} columns
-   <C-w>=  equalize sizes
    <C-w>|  maximize width
    <C-w>_  maximize height
+   <C-w>=  equalize sizes
 ```
 
-
-
-For a comprehensive list of window commands
-try `:help windows.txt`.
-
-Are your fingers getting tired? I know after I get the windows just right my
-left pinky and right finger is crying for mercy.
+For a comprehensive list of window commands try `:help windows.txt`.
 
 ## Solution A
-The most common solution is to make these actions to some other keys so there's
-no need to prefix them with `<C-w>` first.
+The most common solution to window-command-itis is to map other keys to these
+common actions so to include the `<C-w>` prefix.
 
+From [spf13-vim](https://github.com/spf13/spf13-vim/blob/3.0/.vimrc):
 ```vim
-" Move the cursor by hold shift and the motion key.
-nnoremap <S-h> <C-w>h
-nnoremap <S-j> <C-w>j
-nnoremap <S-k> <C-w>k
-nnoremap <S-l> <C-w>l
-
-" Resize holding Ctrl-Shift
-nnoremap <C-S-h> <C-w><
-nnoremap <C-S-l> <C-w>>
-nnoremap <C-S-k> <C-w>+
-nnoremap <C-_> <C-w>-
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
+" Note: They go one extra by maximizing the height after entering the split.
 ```
 
-This has been the accepted solution for most, but it takes away so many convient
-keys. In some cases, it even overrides default behaviour. (`<S-j>`, I miss you).
+From [Thoughbot](https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally):
+```vim
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+```
+
+This has been the accepted solution for most, but it takes away so many
+convenient keys. And in some cases, it even overrides default behaviour.
+`<C-L>`, I miss you. `C-H`, isn't that also `<BS>`? Guess I won't be using
+you either.
+
+## Solution B - Submode to the Rescue
+Install https://github.com/kana/submodes.vim. I consider it one of Japan's
+national treasures along with ninjas and ramen. Unfortunately, Kana's example
+use of submodes is a little underwhelming: undo/redo using `g-` and `g+`.
+I agree with the author that using `g-` and `g+` is not convenient,
+but the solution for that is simply `u` and `<C-R>`. I feel a better application
+for a new submode is window management.
+
+Back to solving the real problem, `<C-w>`. After installing the plugin please
+add the following to your `$MYVIMRC`.
+
+```vim
+" A message will appear in the message line when you're in a submode
+" and stay there until the mode has existed.
+let g:submode_always_show_submode = 1
+
+" We're taking over the default <C-w> setting. Don't worry we'll do
+" our best to put back the default functionality.
+call submode#enter_with('window', 'n', '', '<C-w>')
+
+" Note: <C-c> will also get you out to the mode without this mapping.
+" Note: <C-[> also behaves as <ESC>
+call submode#leave_with('window', 'n', '', '<ESC>')
+
+" Go through every letter
+for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+\           'n','o','p','q','r','s','t','u','v','w','x','y','z',
+\           '=','_','|','+','-','<','>']
+  " maps lowercase, uppercase and <C-key>
+  call submode#map('window', 'n', '', key, '<C-w>' . key)
+  call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
+  call submode#map('window', 'n', '', '<C-' . key . '>', '<C-w>' . '<C-'.key . '>')
+endfor
+" Go through symbols
+for key in ['=','_','|','+','-','<','>']
+  call submode#map('window', 'n', '', key, '<C-w>' . key)
+endfor
+```
+
+After `:source $MYVIMRC`, you'll have a glorious new submode in Vim.
+I named it *window* mode. Can you guess how to get into *window* mode?
+`<C-w>`, the normal prefix used to do any `wincmd`. If this is too drastic, feel
+free to change line #7 to something else. Just replace `<C-w>` with a different
+normal mapping.
+
+Let's give it a test drive.
+{% img featured /images/window-submode.gif 1142 719 'window mode in action' %}
+
+I know you can't see what keys on pressing, but I guarantee I only pressed
+`<C-w>` once. I also didn't have to remember any new key bindings. The
+hesitation in the demo is the resistance to hitting `<C-w>` every time, which
+I'll get over soon enough.
+
+## Bonus Mappings
+But wait there's more! In case I haven't provided enough tips for one post,
+here's the overrides I have in `$MYVIMRC` to make windowing even better.
+
+```vim
+" I don't like <C-w>q, <C-w>c won't exit Vim when it's the last window.
+call submode#map('window', 'n', '', 'q', '<C-w>c')
+call submode#map('window', 'n', '', '<C-q>', '<C-w>c')
+
+" <lowercase-pipe> sets the width to 80 columns, pipe (<S-\>) by default
+" maximizes the width.
+call submode#map('window', 'n', '', '\', ':vertical resize 80<CR>')
+
+" Resize faster
+call submode#map('window', 'n', '', '+', '3<C-w>+')
+call submode#map('window', 'n', '', '-', '3<C-w>-')
+call submode#map('window', 'n', '', '<', '10<C-w><')
+call submode#map('window', 'n', '', '>', '10<C-w>>')
+```
+
+## Closing
+While learning this new way of windowing, there have been a few negatives:
+
+1. I forget that I'm in window mode and get disoriented when I think I'm moving
+   the cursor within a buffer, but it jumps around to other splits.
+
+2. For one off window commands, I have to hit an extra key to get out of window
+   mode or wait for the timeout.
+
+3. When I use some one else's computer, I'm useless.
+
+I think most of these annoyances will go away with time, and the benefits
+overtime in keystroke savings are non-trivial. As for #3, regardless of submodes,
+the brain freeze will never go away, because no one thinks as strangely as me,
+and that's a Good Thing™.
+
+So let me know what you think. Am I crazy or is this the next big thing? Hit me
+up in the comments! Thanks for reading!
+
+## Thanks
+Shout-out to Kana Natsuno, @kana1, http://whileimautomaton.net/, https://github.com/kana. None
+of this awesomeness would be possible without https://github.com/kana/vim-submode. She
+makes some totally sweet plug-ins. Check out her stuff. You won't regret!
+
