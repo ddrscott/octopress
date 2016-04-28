@@ -61,3 +61,14 @@ down. No more yank anxiety means I'm a step closer to editing utopia!
 
 Let me know how this goes for you in the comments below.
 
+## Updates from Comments
+Commenter @Krzysztof noticed Solution B wasn't allowing the user to specify
+the target register. He was awesome enough to update the solution. Here's his
+solution:
+
+```vim
+vnoremap <expr>y "my\"" . v:register . "y`y"
+```
+
+I've updated `$MYVIMRC` and it works great.
+Thanks @Krzysztof for being awesome!
