@@ -37,8 +37,8 @@ vertical motion was perfect, but horizontal motion was still jarring.
 Let's try using marks to keep things in place:
 
 ```vim
-vnoremap y myy`y 
-vnoremap Y myY`y 
+vnoremap y myy`y
+vnoremap Y myY`y
 ```
 {% img featured /images/2016-04-15-yank-without-jank_markdown.png  600 379 'Yank Without Jank Annotation' %}
 The capital `Y` mapping is just in case we want to do a line wise yank from a
