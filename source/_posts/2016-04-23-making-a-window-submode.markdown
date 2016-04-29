@@ -1,12 +1,11 @@
 ---
 layout: post
 title: "Making a Window Submode in Vim"
-date: 2016-04-25 09:00:00 -0500
+date: 2016-04-29 09:00:00 -0500
 comments: true
 categories: vim, submodes
 ---
 {% img featured /images/window-mode-feature.png 1280 380 'Header Image' %}
-
 I found a plugin that is changing my Vim-tire life! This
 [plugin](https://github.com/kana/submodes.vim) is so awesome it should be
 built into default Vim. What does the [plugin](https://github.com/kana/submodes.vim)
@@ -78,15 +77,19 @@ convenient keys. And in some cases, it even overrides default behaviour.
 you either.
 
 ## Solution B - Submode to the Rescue
-Install https://github.com/kana/submodes.vim. I consider it one of Japan's
-national treasures along with ninjas and ramen. Unfortunately, Kana's example
-use of submodes is a little underwhelming: undo/redo using `g-` and `g+`.
-I agree with the author that using `g-` and `g+` is not convenient,
-but the solution for that is simply `u` and `<C-R>`. I feel a better application
-for a new submode is window management.
+This entire solution depends on [kana/vim-submode](https://github.com/kana/vim-submode.git),
+I consider it one of Japan's national treasures along with ninjas and ramen.
+Unfortunately, Kana's example use of submodes is a little underwhelming:
+undo/redo using `g-` and `g+`. I agree with the author that using `g-` and
+`g+` is not convenient, and using `g++++-++-+` is easier, but the solution
+for that was simply `u` and `<C-R>`. I feel a better application for a new
+submode is window management. Imagine if resizing a split was `<C-w>++++++++`
+or `<C-w>------=->>>>>>>><>` or changing cursor location was `<C-w>hjlll`
+or moving was `<C-w>HjKLkjh`. Imagine no more!
 
-Back to solving the real problem, `<C-w>`. After installing the plugin please
-add the following to your `$MYVIMRC`.
+First, install the plugin. If you're not sure how to install a plugin, try
+[junegunn/vim-plug](https://github.com/junegunn/vim-plug). Next, add the
+following to your `$MYVIMRC`.
 
 ```vim
 " A message will appear in the message line when you're in a submode
@@ -103,29 +106,30 @@ call submode#leave_with('window', 'n', '', '<ESC>')
 
 " Go through every letter
 for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-\           'n','o','p','q','r','s','t','u','v','w','x','y','z',
-\           '=','_','|','+','-','<','>']
+\           'n','o','p','q','r','s','t','u','v','w','x','y','z']
   " maps lowercase, uppercase and <C-key>
   call submode#map('window', 'n', '', key, '<C-w>' . key)
   call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
   call submode#map('window', 'n', '', '<C-' . key . '>', '<C-w>' . '<C-'.key . '>')
 endfor
-" Go through symbols
-for key in ['=','_','|','+','-','<','>']
+" Go through symbols. Sadly, '|', not supported in submode plugin.
+for key in ['=','_','+','-','<','>']
   call submode#map('window', 'n', '', key, '<C-w>' . key)
 endfor
+
+" Old way, just in case.
+nnoremap <Leader>w <C-w>
 ```
 
 After `:source $MYVIMRC`, you'll have a glorious new submode in Vim.
-I named it *window* mode. Can you guess how to get into *window* mode?
+You can see I named it *window* mode. Can you guess how to get into *window* mode?
 `<C-w>`, the normal prefix used to do any `wincmd`. If this is too drastic, feel
 free to change line #7 to something else. Just replace `<C-w>` with a different
 normal mapping.
 
 Let's give it a test drive.
 {% img featured /images/window-submode.gif 1142 719 'window mode in action' %}
-
-I know you can't see what keys on pressing, but I guarantee I only pressed
+I know you can't see what keys I'm pressing, but I guarantee I only pressed
 `<C-w>` once. I also didn't have to remember any new key bindings. The
 hesitation in the demo is the resistance to hitting `<C-w>` every time, which
 I'll get over soon enough.
@@ -150,7 +154,7 @@ call submode#map('window', 'n', '', '<', '10<C-w><')
 call submode#map('window', 'n', '', '>', '10<C-w>>')
 ```
 
-## Closing
+## Rainbows without Unicorns
 While learning this new way of windowing, there have been a few negatives:
 
 1. I forget that I'm in window mode and get disoriented when I think I'm moving
@@ -166,11 +170,11 @@ overtime in keystroke savings are non-trivial. As for #3, regardless of submodes
 the brain freeze will never go away, because no one thinks as strangely as me,
 and that's a Good Thing™.
 
-So let me know what you think. Am I crazy or is this the next big thing? Hit me
-up in the comments! Thanks for reading!
-
 ## Thanks
 Shout-out to Kana Natsuno, @kana1, http://whileimautomaton.net/, https://github.com/kana. None
 of this awesomeness would be possible without https://github.com/kana/vim-submode. She
-makes some totally sweet plug-ins. Check out her stuff. You won't regret!
+makes some totally sweet plug-ins. Check out her stuff. You won't regret it!
+
+Let me know what you think. Am I crazy? What other things deserve a submode?
+Hit me up in the comments below! Thanks for reading!
 
