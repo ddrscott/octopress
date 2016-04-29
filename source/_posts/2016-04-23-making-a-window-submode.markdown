@@ -7,8 +7,8 @@ categories: vim, submodes
 ---
 {% img featured /images/window-mode-feature.png 1280 380 'Header Image' %}
 I found a plugin that is changing my Vim-tire life! This
-[plugin](https://github.com/kana/submodes.vim) is so awesome it should be
-built into default Vim. What does the [plugin](https://github.com/kana/submodes.vim)
+[plugin](https://github.com/kana/vim-submode) is so awesome it should be
+built into default Vim. What does the [plugin](https://github.com/kana/vim-submode)
 do? It enables the creation of new submodes. Why would a person want *more* modes?!?
 Isn't dealing with modes the main deterrent for new Vim users? Isn't Normal,
 Insert, Command-line, Visual, Select, and Operator-pending enough? (Did I miss one?)
@@ -171,8 +171,8 @@ the brain freeze will never go away, because no one thinks as strangely as me,
 and that's a Good Thing™.
 
 ## Thanks
-Shout-out to Kana Natsuno, @kana1, http://whileimautomaton.net/, https://github.com/kana. None
-of this awesomeness would be possible without https://github.com/kana/vim-submode. She
+Shout-out to Kana Natsuno, @kana1, http://whileimautomaton.net/, https://github.com/kana . None
+of this awesomeness would be possible without https://github.com/kana/vim-submode . She
 makes some totally sweet plug-ins. Check out her stuff. You won't regret it!
 
 Let me know what you think. Am I crazy? What other things deserve a submode?
