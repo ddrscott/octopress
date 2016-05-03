@@ -95,7 +95,7 @@ disqus_short_name: ddrscottgithubio
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id: UA-50126719-1
+# FIXME google_analytics_tracking_id: UA-50126719-1
 
 # Facebook Like
 facebook_like: true
