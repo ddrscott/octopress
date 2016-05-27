@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Vim Side Search: Making Search Fun Again"
-date: 2016-05-25 09:00:00 -0500
+date: 2016-05-27 09:00:00 -0500
 comments: true
 categories: vim
 published: true
