@@ -140,3 +140,8 @@ think of it. Have more ideas or issues for Side Search? Hit me up on [Github](ht
   - `:help quickfix`
   - [Faster Grepping in Vim](https://robots.thoughtbot.com/faster-grepping-in-vim) by Thoughtbot
   - [The number 12](https://www.google.com/search?q=the+number+12)
+
+### In The News
+
+  - [Hacker News](https://news.ycombinator.com/item?id=11787085)
+  - [Reddit](https://www.reddit.com/r/vim/comments/4lbdur/vim_side_search_plugin_making_search_fun_again/)
