@@ -93,7 +93,8 @@ nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 ```
 
-Get more help about `quickfix` using `:help quickfix`.
+Get more help about `quickfix` using `:help quickfix`. Cry after realizing
+even `:help quickfix` can't show more context. I'll be here when you're done.
 
 ## Solution D - Side Search Plugin
 
@@ -131,7 +132,11 @@ think of it. Have more ideas or issues for Side Search? Hit me up on [Github](ht
 
 ### References
 
-  - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+  - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) by Geoff Greer
   - `man ag`
   - `man grep`
+  - `man tmux`
+  - `man screen`
   - `:help quickfix`
+  - [Faster Grepping in Vim](https://robots.thoughtbot.com/faster-grepping-in-vim) by Thoughtbot
+  - [The number 12](https://www.google.com/search?q=the+number+12)
