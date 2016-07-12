@@ -8,6 +8,22 @@ img.featured {
   height: auto;
 }
 
+.responsive-wrapper {
+  position: relative;
+  padding-bottom: 58.26%;
+  height: 0;
+  overflow: auto; 
+  -webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY 
+  border: solid black 1px;
+} 
+.responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .full-single-article img.featured {
   margin: inherit;
   float: none;
