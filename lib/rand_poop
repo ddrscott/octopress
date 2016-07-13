@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+loop{sleep rand * 60 + 180; print "\xF0\x9F\x92\xA9"}
