@@ -59,14 +59,13 @@ published: true
 * If you're not cheating, you're not trying.
 * Reverse engineer the cheat, don't actually cheat!
 
-## Vim Example
+# How I got better at Vim
 * **RTFM** - `:help`
-* **WTFM** - Blogging, figure out other peoples problems :/
-* **Practice** Wrote stuff that wasn't needed immediately, my own notes.
-* **Don't Memorize** Vim has grammar like English. Oooh... Reconnection!
-* **Learn with Others** - We have vim users, teach them (but don't let them know
-    your only a 1/8th step ahead :o)
-* **Cheat** Look at the source code to see how others do things
+* **WTFM** - Blogging, figure out other people's problems :/
+* **Practice** - Wrote stuff that wasn't needed immediately, my own notes.
+* **Don't Memorize** - Vim has grammar like English. Oooh... Reconnection!
+* **Learn with Others** - We have vim users, teach them (but don't let them know you're only one step ahead)
+* **Cheat** - Look at other's Vimscript to figure out that cool thing they did.
 
 ## What do you want to get better at next?!?
 * lightning talks?
