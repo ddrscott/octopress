@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What the SQL? - Lateral Joins"
+title: "What the SQL?!? Lateral Joins"
 date: 2017-03-08 12:30:00-0600
 comments: true
 categories: talk sql
