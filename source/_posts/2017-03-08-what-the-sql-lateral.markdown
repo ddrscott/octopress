@@ -9,7 +9,7 @@ published: true
 
 {% img featured /images/what_the_sql_lateral.png  'What the SQL?!? Lateral Joins' %}
 
-# What the SQL?!? - Lateral Joins
+# What the SQL?!? Lateral Joins
 
 Today's "What the SQL?!?" features the keyword `LATERAL`. A prerequisite to
 understanding lateral joins are regular joins and subqueries. I'll explain those
