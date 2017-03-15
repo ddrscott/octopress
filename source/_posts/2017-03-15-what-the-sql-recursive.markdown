@@ -61,7 +61,7 @@ FROM t
 ## The Ins and Outs
 
 Here's some inline colorful comments to explain the sections:
-{% img /images/recursion_sql.png 1804 1370 'annotated SQL' %}
+{% img featured /images/recursion_sql.png 1804 1370 'annotated SQL' %}
 
 Maybe arrows will help a little more with the flow of data:
 {% img featured /images/recursive_query.jpg 1024 705 'Data Flow' %}
