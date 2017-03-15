@@ -8,6 +8,8 @@ categories: ansi ascii ruby
 This was a lightening talk given to the office about ANSI Escape Codes. Most of
 the time, all 5 minutes of it, was spent explaining the code snippets.
 
+<!-- more -->
+
 [Wiki about ANSI Codes](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 ## What is an ANSI code?
