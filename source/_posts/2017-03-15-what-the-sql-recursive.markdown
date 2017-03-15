@@ -128,7 +128,7 @@ SELECT * FROM sample_people;
 --   6 | Frank |         5
 ```
 
-Our `sample_people` table represents a person by name and that person my have a
+Our `sample_people` table represents a person by name and that person may have a
 parent. The parent of all the parents is `Root`.
 
 And finally our recursive query to get a nice display of the hierarchy.
