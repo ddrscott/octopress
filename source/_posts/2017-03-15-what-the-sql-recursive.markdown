@@ -9,8 +9,6 @@ published: true
 
 {% img featured /images/i_heart_recursion.png 1804 1195 'What the SQL?!? Recursive' %}
 
-# What the SQL?!? Recursive
-
 Today's "What the SQL?!?" features the keyword `RECURSIVE`. This clause allows
 us to elegantly select results from the previous results from the previous results
 from the previous results...
