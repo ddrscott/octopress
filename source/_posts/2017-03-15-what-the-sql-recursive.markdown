@@ -12,8 +12,8 @@ published: true
 # What the SQL?!? Recursive
 
 Today's "What the SQL?!?" features the keyword `RECURSIVE`. This clause allows
-us to elegantly select results from the previous results from previous results from
-previous results...
+us to elegantly select results from the previous results from the previous results
+from the previous results...
 
 <!-- more -->
 
@@ -93,7 +93,7 @@ value. If you go above `i < 793`, Postgres gives up and returns `Nan` which mean
 handle and still treat like a number. Sorry, get a new computer or work with
 numbers less than 166 digits long.
 
-# An Real World Example with Hierarchal Data
+# A Real World Example with Hierarchical Data
 Fibonacci sequence is nice and all, but you have real data concerns. You're
 thinking, "Show me the DATA!". So here's the data...
 
@@ -103,7 +103,7 @@ CREATE TABLE sample_people AS
   SELECT
     column1::int     AS id,
     column2::varchar AS name,
-    column3::int AS parent_id
+    column3::int     AS parent_id
   FROM (
     VALUES
       (0, 'Root' , null),
