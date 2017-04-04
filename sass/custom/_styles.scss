@@ -43,3 +43,7 @@ ul {
 ol {
   list-style: decimal;
 }
+
+table {
+  @extend .table;
+}
