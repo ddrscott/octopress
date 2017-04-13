@@ -10,7 +10,7 @@ published: true
 {% img featured /images/base16-featured.png 1024 558 'Base16 Featured' %}
 
 After many years using the excellent Solarized color scheme, it has
-started to feel a stale. Sometimes I think the dark blueish tint brings
+started to feel stale. Sometimes I think the dark blueish tint brings
 down my mood. Other times, I wonder what life could be like if I stared at more
 cheerful colors. Thus starts my farewell from Solarized, and hello to
 Base16.
@@ -30,8 +30,8 @@ unlimited supply of themes in the future!
 
 Base16 has perfect iTerm and shell integration. Once the repo was installed
 locally, I called `base16_ocean` and was greeted by brand new palette. No iTerm
-tweaking, no downloading this other thing, and importing stuff into iTerm. It
-was literally 2 steps performed in shell and then choose a theme.
+tweaking, no downloading this other thing and importing stuff into iTerm. It was
+literally 2 steps performed in shell and then pick a theme.
 
 Here's what you do. (FYI. This is pretty much copy/paste from their repo)
 
@@ -48,8 +48,8 @@ SH
 
 After you're done with those steps, start a new terminal session or source the
 file, and start choosing a theme. Try `base16_ocean` to see what I'm seeing. Try
-`base16_<tab>` to see what other options you have available. To see what they
-look like before making a choice go to their website:
+`base16_<tab>` to see what other options you have available. To preview what
+they look like before making a choice go to their website:
 https://chriskempson.github.io/base16/.
 
 ## Vim Integration
@@ -73,4 +73,4 @@ shell which is AWESOME!
 
 After cycling through everyone of the user created themes, I've settled on
 `base16_ocean` as my new home. I may get tired of it, I may not, but either way
-I'm just a shell call away from moving. Indecision has never been so easy.
+I'm just a shell command away from changing. Indecision has never been so easy.
