@@ -40,7 +40,7 @@ Here's what you do. (FYI. This is pretty much copy/paste from their repo)
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # 2. update ~/.bashrc or ~/.zshrc
-cat >> ~/.zshrc <<SH
+cat >> ~/.zshrc <<'SH'
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 SH
