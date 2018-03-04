@@ -4,6 +4,7 @@ title: "Vim Send Text"
 date: 2017-04-10 12:30:00-0600
 comments: true
 categories: talk vim
+image: https://raw.githubusercontent.com/ddrscott/vim-islime2/gh-pages/demo.gif
 published: true
 ---
 

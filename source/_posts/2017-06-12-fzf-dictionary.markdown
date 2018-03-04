@@ -2,6 +2,7 @@
 layout: post
 title: "FZF + WordNet = Dictionary"
 date: 2017-06-12 12:30:00-0600
+image: /images/fzf_dictionary_demo.gif
 comments: true
 categories: fzf wordnet shell
 published: true

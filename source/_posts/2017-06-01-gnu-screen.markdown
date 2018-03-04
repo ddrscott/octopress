@@ -4,6 +4,7 @@ title: "GNU Screen"
 date: 2017-06-01 12:30:00-0600
 comments: true
 categories: shell screen
+image: /images/gnu-screen-featured.jpg
 published: true
 ---
 

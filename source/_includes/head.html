@@ -8,8 +8,14 @@
   <meta name="author" content="{{ site.author }}">
 
   {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+  <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:250 }}">
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="https://ddrscott.github.io/" />
+  <meta name="twitter:creator" content="@_ddrscott_" />
+  <!-- HELLO  {{ root_url }} -->
+  {% if page.image %}<meta property="og:image" content="{{ page.image }}" />{% endif %}>
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
