@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Getting Rusty"
-date: 2018-03-04 09:00:00 -0500
+date: 2018-03-04 06:30 America/Chicago
 comments: true
 categories: Rust vim
 image: /images/rusty-featured.png
 published: true
 ---
 
-{% img featured /images/rusty-featured.png  1910 1436 'Vim Screenshot' %}
+<img class="featured" src="{{page.image}}" width=1910 height=1436 alt="Vim Screenshot" />
 
 After dabbing in Go and Crystal, I figured I'd give Rust a try. Of course I
 used Vim along the way. Here are some notes I compiled after my first session.

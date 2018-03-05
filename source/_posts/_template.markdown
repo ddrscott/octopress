@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Templates are Fun!"
-date: 2016-04-23 09:00:00 -0500
+title:
+date: 2018-03-04 06:30 America/Chicago
 comments: true
 categories: vim
+image: /images/template.png
 published: false
 ---
 
-{% img featured /images/template.png  600 375 'Some Image' %}
-
+<img class="featured" src="{{page.image}}" width=1900 height=1200 alt="Featured Image" />
 
 <!-- more -->
 
