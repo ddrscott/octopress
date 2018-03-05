@@ -7,16 +7,16 @@
   <title>{% if page.title %}{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %} - {% endif %}{{ site.title }}</title>
   <meta name="author" content="{{ site.author }}">
 
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | excerpt | strip_html | condense_spaces }}{% endif %}{% endcapture %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ page.content | excerpt | condense_spaces | strip_html }}{% endif %}{% endcapture %}
   <meta name="description" content="{{ description }}" />
 
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="https://ddrscott.github.io/" />
+  <meta name="twitter:site" content="{{ site.url }}" />
   <meta name="twitter:creator" content="@_ddrscott_" />
   {% if page.title %}<meta property="og:title" content="{{ page.title }}" />{% endif %}
-  {% if page.image %}<meta property="og:image" content="{{ page.image }}" />{% endif %}
+  {% if page.image %}<meta property="og:image" content="{{ site.url }}{{ page.image }}" />{% endif %}
   <meta property="og:description" content="{{ description }}" />
 
   <!-- http://t.co/dKP3o1e -->
