@@ -107,7 +107,7 @@ module OctopressLiquidFilters
 
   # Condenses multiple spaces and tabs into a single space
   def condense_spaces(input)
-    input.gsub(/\s{2,}/, ' ')
+    input.split("\n").join(' ').gsub(/\s{2,}/, ' ')
   end
 
   # Removes trailing forward slash from a string for easily appending url segments
