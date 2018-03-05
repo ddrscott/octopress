@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting Rusty"
+title: "Getting Rusty with Vim"
 date: 2018-03-04 06:30 America/Chicago
 comments: true
 categories: Rust vim
