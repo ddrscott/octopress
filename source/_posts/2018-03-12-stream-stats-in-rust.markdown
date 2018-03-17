@@ -250,6 +250,17 @@ Exact difference is <a href="https://github.com/ddrscott/tutorial-stream_stats/c
 We're finally at the most useful part of the program. Viewing the stats while
 the stream is still going.
 
+For this task, we introduce a thread which loops forever sleeping a little and
+waking to output the stats. Because of the thread, we need to use `Arc` to
+safely tell Rust another thread is going to have a pointer to the stats object.
+
+To be honest, I don't fully understand why I need to use `AtomicUsize`. I tried
+to keep the `usize` variables would get errors regarding mutability. If someone
+out there can remove the `AtomicUsize` without introducing `unsafe` please let
+me know!
+
+Here's the final code listing:
+
 ```rust
 use std::fmt;
 use std::fs::{File, OpenOptions};
