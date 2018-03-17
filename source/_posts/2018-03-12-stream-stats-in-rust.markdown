@@ -3,7 +3,7 @@ layout: post
 title: "A Rustic Journey Through Stream Stats"
 date: 2018-03-17 02:45 America/Chicago
 comments: true
-categories: Rust vim
+categories: Rust
 image: /images/stream_stats_demo.png
 published: true
 ---
