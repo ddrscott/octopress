@@ -363,6 +363,7 @@ Exact difference is <a href="https://github.com/ddrscott/tutorial-stream_stats/c
 I personally learned a lot assembling these steps and wish I did this _before_
 publishing the `cargo` [crate](https://github.com/ddrscott/stream_stats) of the same name.
 
-Any suggestions, comments, and corrections welcome on this post or the final crate are welcome. https://github.com/ddrscott/stream_stats.
+Any suggestions, comments, and corrections welcome on this post or the final crate are welcome.
+https://github.com/ddrscott/stream_stats
 
 Thanks for learning with me!
