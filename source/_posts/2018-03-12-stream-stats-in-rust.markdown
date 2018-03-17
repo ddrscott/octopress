@@ -10,8 +10,9 @@ published: true
 
 <img class="featured" src="{{page.image}}" width=1364 height=1078 alt="Stream Stats Demo" />
 
-After playing [Guessing Game](/blog/2018/getting-rusty-with-vim/) from the [Rust Book](https://doc.rust-lang.org/book/first-edition/guessing-game.html) a few times, it was time to make something a little more substantial. We're going to create `stream_stats`, a CLI program which prints throughput statistics from `stdin` while redirecting through `stdout`. Think `tee` + `wc -l` + `watch` all at
-the same time. 
+After playing [Guessing Game](/blog/2018/getting-rusty-with-vim/) from the [Rust Book](https://doc.rust-lang.org/book/first-edition/guessing-game.html) a few times, it was time to make something a little more substantial. We're going to create `stream_stats`, a CLI program which prints throughput statistics from `stdin` while redirecting through `stdout`. Think `tee` + `wc -l` + `watch` all at the same time.
+
+**TL;DR** - `cargo install stream_stats`
 
 <!-- more -->
 
@@ -19,7 +20,11 @@ Here is a quick demo of the program:
 
 <img src="/images/stream_stats_demo.gif" width=745 height=250 alt="Stream Stats Gif" />
 
+Today, I we'll build this program up in 6 steps smallish steps. The minimum requirement of this program was the live feedback as seen in the demo _and_ minimal impact on the overall performance.
+
 ## Step 1 - Reproducing `cat` Inefficiently
+
+First step is to replicate `cat`. We'll do it as demonstrated by Rust's own [documentation](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line).
 
 ```rust
 use std::io;
@@ -32,6 +37,7 @@ fn main() {
     }
 }
 ```
+> I'm using `unwrap` to keep our program short and sweet.
 
 Save the code as `stream_stats.rs` and build it using `rustc -O stream_stats.rs`. This will
 compile the program into `stream_stats`. We can now run the program with
@@ -39,9 +45,10 @@ compile the program into `stream_stats`. We can now run the program with
 
 The program is sufficient for small streams, but will perform horribly on large files.
 
-## Step 2 - Reproducing `cat` with Buffering (Efficiently)
+## Step 2 - Reproducing `cat` Efficiently with Buffering
 
-> It can be excessively inefficient to work directly with a Read instance. For example, every call to read on TcpStream results in a system call. A BufReader performs large, infrequent reads on the underlying Read and maintains an in-memory buffer of the results
+> It can be excessively inefficient to work directly with a Read instance. For example, every call to read on TcpStream results in a system call. A BufReader performs large, infrequent reads on the underlying Read and maintains an in-memory buffer of the results.
+>
 > -- https://doc.rust-lang.org/std/io/struct.BufReader.html
 
 Lets add some buffer use to increase performance and get it near the speed of `cat`. Replace the contents of `stream_stats.rs` with the following, recompile, and run the program.
@@ -64,7 +71,7 @@ fn main() {
 }
 ```
 
-The exact difference is <a href="https://github.com/ddrscott/tutorial-stream_stats/commit/30da32426f7ac420f4660c168678341301c68648" target="_new">viewable on Github</a>.  
+The exact difference is <a href="https://github.com/ddrscott/tutorial-stream_stats/commit/30da32426f7ac420f4660c168678341301c68648" target="_new">viewable on Github</a>.
 Here's a one-liner which to help with the build/run cycle:
 
 ```sh
