@@ -4,8 +4,9 @@ title: "A Rustic Journey Through Stream Stats"
 date: 2018-03-17 02:45 America/Chicago
 comments: true
 categories: Rust
-image: /images/stream_stats_demo.png
 published: true
+image: /images/stream_stats_demo.png
+description: How I made a CLI program in Rust which combines tee, wc -l, and watch.
 ---
 
 <img class="featured" src="{{page.image}}" width=1364 height=1078 alt="Stream Stats Demo" />
