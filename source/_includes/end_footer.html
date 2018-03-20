@@ -1,5 +1,11 @@
 <div class="pull-right">
   <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
 </div>
+<script>
+// Thanks: https://stackoverflow.com/a/4425214/613772
+$(document.links).filter(function() {
+    return this.hostname != window.location.hostname;
+}).attr('target', '_blank');
+</script>
 {% include google_analytics.html %}
 {% include disqus.html %}
