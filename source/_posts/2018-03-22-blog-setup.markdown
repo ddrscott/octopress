@@ -54,7 +54,7 @@ Here's how Base16 describes itself:
 >
 > -- https://github.com/chriskempson/base16
 
-<img src="/images/base16_colors.png" width=1398 height=1136 alt="Base16 ocean colors" />
+<img src="/images/base16_colortest.png" width=1398 height=1136 alt="Base16 ocean colors" />
 
 [base16-ocean][] is the color scheme I use. It's scheme #74, type `j` or `k` to change the theme). The scheme is perfectly in sync between shell and Vim due to [base16-shell][] and [base16-vim][]. I wrote a [longer post about using Base16 while back](/blog/2017/base16-shell/).
 
