@@ -68,7 +68,9 @@ I've been using the same code font for as long as I can remember: Input Mono Con
 >
 > -- Font Bureau
 
-I enjoy the fancy 'a' and 'g' characters along with easy to distinguish 'l', '1', and 'I'. It also has several different character width options so I can squeeze more code in one eye shot.
+I enjoy the fancy 'a' and 'g' characters along with easy to distinguish 'l', '1', and 'I'.(Helvetica can't do it justice.) It also has several different character width options so I can squeeze more code into one eye shot.
+
+<img src="/images/input_font_letters.jpg" width=846 height=62 alt="Input Font Letters" />
 
 Speaking of shots&hellip;
 
