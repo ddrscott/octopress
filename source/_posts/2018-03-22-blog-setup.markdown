@@ -98,7 +98,7 @@ Here's an example [LICEcap][] Gif:
 And here's a video of how I produced it:
 <div style="position:relative;height:0;padding-bottom:75.0%"><iframe src="https://www.youtube.com/embed/_BwVHJx1Zc4?ecver=2" width="480" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
-For full screen video record, I use [OBS Studio][obs]. (You might have noticed me stopping the recording at the end of the video. Should have used a hotkey.) It produces small file sizes and a lot has features including video overlays, webcam capture, filters, transforms, etc. It deserves a whole book of its own.
+For full screen video record, I use [OBS Studio][obs]. (You might have noticed me stopping the recording at the end of the video. Should have used a hotkey.) It produces small file sizes and has a lot of features including webcam overlays, filters, transforms, etc. It deserves a whole book of its own.
 
 > **Note to Self**
 >
