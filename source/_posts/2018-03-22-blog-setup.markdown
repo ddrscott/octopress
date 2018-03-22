@@ -119,6 +119,8 @@ You made it to the end! I hope at least one of these will benefit your daily com
 
 Questions? Comments? Trolls?!? Let me know! <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-hashtags="til">Tweet</a>
 
+[Hacker News](https://news.ycombinator.com/item?id=16648381)
+
 **Links**
 
 + iTerm2 -- https://www.iterm2.com/
@@ -139,6 +141,10 @@ Questions? Comments? Trolls?!? Let me know! <a class="twitter-share-button" href
 + OBS Studio -- https://obsproject.com/
 + Octopress -- http://octopress.org/
 + Mkdocs -- http://www.mkdocs.org/
+
+**Edits**
+
++ added Hacker News link
 
 [DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [iTerm2]: https://www.iterm2.com/
